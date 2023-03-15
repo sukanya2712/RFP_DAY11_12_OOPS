@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
- class Stock{
+ class Stock{  // simple code using private variables getter and setter to access stock variables
     private String name;
     private int numShares;
     private double sharePrice;
@@ -29,7 +29,7 @@ import java.util.Scanner;
     }
 }
 
- class StockPortfolio {
+ class StockPortfolio { // storing values of user entered value in stock
      private List<Stock> stocks;
 
      public StockPortfolio() {
@@ -48,7 +48,7 @@ import java.util.Scanner;
          return totalValue;
      }
 
-     public void printStockReport() {
+     public void printStockReport() {   // using class1's data here
          System.out.println("Stock Report:");
          for (Stock stock : stocks) {
              System.out.println(stock.getName() + " - " + stock.getNumShares() + " shares - " + stock.getSharePrice() + " per share - Value: " + stock.getValue());
@@ -63,7 +63,7 @@ public class StockAccountManagement {
         System.out.print("Enter the number of stocks: ");
         int numStocks = scanner.nextInt();
 
-        StockPortfolio portfolio = new StockPortfolio();
+        StockPortfolio portfolio = new StockPortfolio(); // accessing seacond class to add stock to list
 
         for (int i = 1; i <= numStocks; i++) {
             System.out.println("Enter details of stock #" + i + ":");
@@ -74,10 +74,10 @@ public class StockAccountManagement {
             System.out.print("Share price: ");
             double sharePrice = scanner.nextDouble();
 
-            Stock stock = new Stock(name, numShares, sharePrice);
-            portfolio.addStock(stock);
+            Stock stock = new Stock(name, numShares, sharePrice); // creating stock
+            portfolio.addStock(stock); // passing stock to list
         }
 
-        portfolio.printStockReport();
+        portfolio.printStockReport(); //printing stock accessing seacond class variable
     }
 }
